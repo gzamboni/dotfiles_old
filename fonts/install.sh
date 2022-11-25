@@ -10,7 +10,7 @@ install() {
 if [ "$(uname -s)" = "Darwin" ]; then
 	if command -v brew >/dev/null 2>&1; then
 		brew tap homebrew/cask-fonts
-		brew cask install font-jetbrains-mono font-hack
+		brew install --cask font-jetbrains-mono font-hack
 	else
 		install ~/Library/Fonts
 	fi
