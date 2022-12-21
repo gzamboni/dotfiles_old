@@ -18,7 +18,7 @@ config_files=($DOTFILES/*/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
-  source "$file"
+  source $file
 done
 
 # load antibody plugins
@@ -48,14 +48,14 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 
-# zprof
-source /Users/gzamboni/.asdf/asdf.sh
+export ASDF_DIR=$HOME/.asdf
+[[ $PATH == *"asdf/bin"* ]] || export PATH="$PATH:~/.asdf/bin"
+. $ASDF_DIR/asdf.sh
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
-source /Users/gzamboni/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
-source /Users/gzamboni/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
+
+eval "$(asdf exec direnv hook zsh)"
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
