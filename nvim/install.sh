@@ -19,19 +19,35 @@ if ! command -v nvim &>/dev/null; then
     exit 1
   fi
 fi
-# links nvim config to dotfiles
-ln -s ~/.dotfiles/nvim ~/.config/nvim
 
-# install Packer vim plugin manager
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#check if the symlink exists if not then create it
+if [ ! -d ~/.config/nvim ]; then
+  ln -s ~/.dotfiles/nvim ~/.config/nvim
+fi
 
-# install plugins
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &>/dev/null
+# check if Packer plugin manager is installed if not then install it
+if [ ! -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+fi
+
+# if nvim is installed then install nvim plugins
+if ! command -v nvim &>/dev/null; then
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &>/dev/null
+fi
 
 # search for the EDITOR variable in .zshrc if it exists and replace it with nvim
 # if not then append it with nvim value to the end of the file
 if grep -q "EDITOR" ~/.zshrc; then
-  sed -i 's/EDITOR=.*/EDITOR=nvim/g' ~/.zshrc
+  # if this machine is a Mac then use sed -i '' instead of sed -i
+  if [ "$(uname -s)" = "Darwin" ]; then
+    mv ~/.zshrc ~/zshrc.bak
+    sed -i '' 's/EDITOR=.*/EDITOR=nvim/g' ~/zshrc.bak
+    mv ~/zshrc.bak ~/.zshrc
+  else
+    mv ~/.zshrc ~/zshrc.bak
+    sed -i 's/EDITOR=.*/EDITOR=nvim/g' ~/zshrc.bak
+    mv ~/zshrc.bak ~/.zshrc
+  fi
 else
   echo "EDITOR=nvim" >>~/.zshrc
 fi
