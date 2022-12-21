@@ -71,7 +71,7 @@ fi
 
 # if nvim is installed then install nvim plugins
 if command -v nvim &>/dev/null; then
-  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &>/dev/null
+  nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 fi
 
 # search for the EDITOR variable in .zshrc if it exists and replace it with nvim
