@@ -31,7 +31,7 @@ for plugin in "${PLUGINS[@]}"; do
 done
 
 # install direnv
-asdf install direnv 2.28.0
+asdf install direnv 2.32.1
 
 # install nodejs
 asdf install nodejs 19.3.0
@@ -57,7 +57,7 @@ asdf global yarn 1.22.10
 asdf global python 3.8.15
 asdf global golang 1.16.6
 asdf global rust 1.54.0
-asdf global direnv 2.28.0
+asdf global direnv 2.32.1
 asdf global terraform latest
 
 # add asdf to .zshrc only if it's not already there

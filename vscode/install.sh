@@ -11,7 +11,12 @@ if command -v code >/dev/null; then
 	ln -sf "$DOTFILES/vscode/keybindings.json" "$VSCODE_HOME/User/keybindings.json"
 	ln -sf "$DOTFILES/vscode/snippets" "$VSCODE_HOME/User/snippets"
 
+	EXTENSION_LIST=$(code --list-extensions)
+
 	while read -r module; do
-		code --install-extension "$module" || true
+		# check if the extension is already installed if not install it
+		if [[ ! $EXTENSION_LIST =~ $module ]]; then
+			code --install-extension "$module"
+		fi
 	done <"$DOTFILES/vscode/extensions.txt"
 fi

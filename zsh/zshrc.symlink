@@ -48,5 +48,5 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 . /home/gzamboni/.asdf/asdf.sh
-. /home/gzamboni/.asdf/completions/asdf.bash
+#. /home/gzamboni/.asdf/completions/asdf.bash
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
