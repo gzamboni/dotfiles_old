@@ -47,15 +47,6 @@ unset config_files updated_at
 # want in your public, versioned repo.
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
-
-export ASDF_DIR=$HOME/.asdf
-[[ $PATH == *"asdf/bin"* ]] || export PATH="$PATH:~/.asdf/bin"
-. $ASDF_DIR/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
-
-eval "$(asdf exec direnv hook zsh)"
+. /home/gzamboni/.asdf/asdf.sh
+. /home/gzamboni/.asdf/completions/asdf.bash
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
