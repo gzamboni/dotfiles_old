@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# check if asdf is installed, if not, install it
-if command -v asdf >/dev/null 2>&1; then
+# check if asdf dir exists, if not, install it
+if [ ! -d "$HOME/.asdf" ]; then
 	echo "asdf is already installed"
 else
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
