@@ -29,6 +29,8 @@ maps.general = {
     ["<leader>s"] = { [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], "search replace" },
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
     ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
+    ["<C-u>"] = { "<C-u>zz", "go up and cursor center" },
+    ["<C-d>"] = { "<C-d>zz", "go down and cursor center" },
 
     -- new buffer
     ["<leader>n"] = { "<cmd>enew<CR>", "new buffer" },
