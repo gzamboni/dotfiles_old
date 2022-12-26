@@ -122,8 +122,14 @@ maps.telescope = {
 maps.nvimtree = {
   plugin = true,
   n = {
-    ["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "toggle file explorer" },
-    ["<leader>r"] = { "<cmd>NvimTreeRefresh<CR>", "refresh file explorer" },
+    ["<leader>e"] = { function()
+      local view = require("nvim-tree.view")
+      if view.is_visible() then
+        vim.cmd.NvimTreeFocus()
+      else
+        vim.cmd.NvimTreeToggle()
+      end
+    end }
   },
 }
 

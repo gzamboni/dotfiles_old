@@ -30,7 +30,7 @@ require("nvim-tree").setup({
     dotfiles = false,
   },
   git = {
-    enable = false,
+    enable = true,
     ignore = true,
   },
   filesystem_watchers = {
