@@ -116,7 +116,8 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+  -- Install terminal popup
+  use 'akinsho/nvim-toggleterm.lua'
+
+  require('packer').sync()
 end)
