@@ -1,3 +1,4 @@
+require("gzamboni.autocmds")
 require("gzamboni.remaps")
 require("gzamboni.packer")
 require("gzamboni.colorscheme")
