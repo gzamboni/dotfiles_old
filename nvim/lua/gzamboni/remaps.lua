@@ -24,9 +24,17 @@ maps.general = {
   },
 
   n = {
-    ['Q'] = { "<Nop", "Disable quit" },
-    ["<leader>f"] = { vim.lsp.buf.format, "format buffer" },
-    ["<leader>s"] = { [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], "search replace" },
+
+    ['Q'] = { "q", "Disable quit" },
+    ['q'] = { '<Nop>', 'Disable quit'},
+    ["<C-b>"] = { "<ESC>^i", "beginning of line" },
+    ["<C-e>"] = { "<End>", "end of line" },
+    ["<C-h>"] = { "<C-w>h", "move to left window" },
+    ["<C-j>"] = { "<C-w>j", "move to bottom window" },
+    ["<C-k>"] = { "<C-w>k", "move to top window" },
+    ["<C-l>"] = { "<C-w>l", "move to right window" },
+    ["<C-q>"] = { "<cmd>qa<CR>", "quit" },
+    ["<D-r>"] = { "<cmd>Bd<CR>", "quit mac style" },
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
     ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
     ["<C-u>"] = { "<C-u>zz", "go up and cursor center" },
@@ -46,6 +54,12 @@ maps.general = {
     -- Clipboard
     ["<leader>y"] = { '"+y', "copy to clipboard" },
     ["<leader>Y"] = { '"+Y', "copy to clipboard more" },
+
+    -- Move lines
+    ["<A-j>"] = { ":m .+1<CR>==", "move line down" },
+    ["<A-k>"] = { ":m .-2<CR>==", "move line up" },
+    ["<leader>f"] = { vim.lsp.buf.format, "format buffer" },
+    ["<leader>s"] = { [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]], "search replace" },
   },
 
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
@@ -53,7 +67,7 @@ maps.general = {
   v = {
     ["<Up>"] = { 'v:count || mode(-2)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["J"] = { ":m '>+0<CR>gv=gv", "move line down" },
+    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
     -- Clipboard
     ["<leader>y"] = { '"+y', "copy to clipboard" },
@@ -152,19 +166,6 @@ maps.gitsigns = {
   },
 }
 
-maps.nvim_comment = {
-  plugin = true,
-  n = {
-    ["<leader>/"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-    ["<S-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-  },
-  v = {
-    ["<leader>/"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-    ["<S-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-  },
-}
-
-
 maps.bufferline = {
   plugin = true,
   n = {
@@ -188,6 +189,17 @@ maps.bufferline = {
     ["<leader>bp"] = { "<cmd>BufferLinePick<CR>", "pick buffer" },
   },
 }
+
+maps.nvim_comment = {
+  plugin = true,
+  n = {
+    ["<D-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
+  },
+  v = {
+    ["<D-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
+  },
+}
+
 
 maps.renamer = {
   plugin = true,

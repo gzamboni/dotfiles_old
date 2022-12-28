@@ -1,9 +1,9 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -50,11 +50,15 @@ return require('packer').startup(function(use)
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
+      -- { 'hrsh7th/cmp-buffer' },
       { 'hrsh7th/cmp-path' },
       { 'saadparwaiz1/cmp_luasnip' },
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'hrsh7th/cmp-nvim-lua' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'hrsh7th/cmp-emoji' },
+      { 'hrsh7th/cmp-calc' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
 
       -- Snippets
       { 'L3MON4D3/LuaSnip' },
@@ -118,6 +122,9 @@ return require('packer').startup(function(use)
 
   -- Install terminal popup
   use 'akinsho/nvim-toggleterm.lua'
+
+  -- Install folke/which-key.nvim
+  use 'folke/which-key.nvim'
 
   if packer_bootstrap then
     require('packer').sync()
