@@ -51,9 +51,9 @@ maps.general = {
   t = { ["<C-x>"] = { termcodes "<C-\\><C-N>", "escape terminal mode" } },
 
   v = {
-    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(-2)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
+    ["J"] = { ":m '>+0<CR>gv=gv", "move line down" },
     ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
     -- Clipboard
     ["<leader>y"] = { '"+y', "copy to clipboard" },
@@ -156,11 +156,11 @@ maps.nvim_comment = {
   plugin = true,
   n = {
     ["<leader>/"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-    ["<leader>c"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
+    ["<S-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
   },
   v = {
     ["<leader>/"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
-    ["<leader>c"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
+    ["<S-c>"] = { "<cmd>CommentToggle<CR>", "toggle comment" },
   },
 }
 

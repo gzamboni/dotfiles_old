@@ -119,5 +119,7 @@ return require('packer').startup(function(use)
   -- Install terminal popup
   use 'akinsho/nvim-toggleterm.lua'
 
-  require('packer').sync()
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
