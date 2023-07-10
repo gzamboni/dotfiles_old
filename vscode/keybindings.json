@@ -3,5 +3,9 @@
     {
         "key": "shift+win+f",
         "command": "extension.sayHello"
+    },
+    {
+        "key": "shift+alt+cmd+=",
+        "command": "editor.action.transformToSnakecase"
     }
 ]

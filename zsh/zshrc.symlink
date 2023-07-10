@@ -48,3 +48,5 @@ unset config_files updated_at
 # shellcheck disable=SC1090
 [ -f ~/.localrc ] && . ~/.localrc
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
