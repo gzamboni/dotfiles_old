@@ -1,143 +1,124 @@
 {
-  "editor.fontSize": 15,
-  "editor.formatOnSave": true,
-  "editor.rulers": [
-    120
-  ],
-  "editor.tabSize": 2,
-  "editor.trimAutoWhitespace": true,
-  "editor.tabCompletion": "on",
-  "explorer.openEditors.visible": 0,
-  "window.restoreWindows": "none",
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.fontSize": 14,
-  "files.autoSave": "onFocusChange",
-  "extensions.autoUpdate": true,
-  "editor.cursorBlinking": "phase",
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
-  "files.trimTrailingWhitespace": true,
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "boundary",
-  "workbench.colorTheme": "MacOS Modern Dark - Ventura Xcode",
-  "extensions.ignoreRecommendations": false,
-  "go.coverageDecorator": {
-    "type": "gutter"
-  },
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "/vendor": true
-  },
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.fontAliasing": "auto",
-  "workbench.editor.showIcons": true,
-  "explorer.confirmDragAndDrop": false,
-  "search.smartCase": true,
-  "files.associations": {
-    "*.tmpl": "gotemplate"
-  },
-  "go.testTimeout": "3m",
-  "breadcrumbs.enabled": true,
-  "go.formatTool": "goimports",
-  "search.useGlobalIgnoreFiles": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "search.showLineNumbers": true,
-  "ruby.intellisense": "rubyLocate",
-  "ruby.format": "rubocop",
-  "ruby.codeCompletion": "rcodetools",
-  "ruby.useLanguageServer": true,
-  "terminal.integrated.cursorBlinking": true,
-  "go.coverOnSingleTest": true,
-  "terminal.integrated.cursorStyle": "line",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "go.useLanguageServer": true,
-  "go.alternateTools": {
-    "go-langserver": "gopls"
-  },
-  "go.languageServerExperimentalFeatures": {
-    "format": true,
-    "autoComplete": true
-  },
-  "window.newWindowDimensions": "inherit",
-  "go.buildFlags": [
-    "-v"
-  ],
-  "editor.smoothScrolling": true,
-  "files.exclude": {
-    "yarn.lock": true
-  },
-  "tabnine.experimentalAutoImports": true,
-  "yaml.schemas": {
-    "file:///Users/gzamboni/.vscode/extensions/atlassian.atlascode-3.0.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
-  "editor.inlineSuggest.enabled": true,
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "terraform.languageServer.enable": true,
-  "redhat.telemetry.enabled": true,
-  "githubPullRequests.pullBranch": "never",
-  "editor.lineNumbers": "relative",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.productIconTheme": "macos-modern",
-  "workbench.iconTheme": "macos-modern-big-sur-icon-theme",
-  "settingsSync.ignoredSettings": [
-    "-python.venvFolders",
-    "-direnv.path.executable"
-  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "atlascode.bitbucket.enabled": false,
+  "atlascode.jira.explorer.nestSubtasks": true,
   "atlascode.jira.jqlList": [
     {
+      "enabled": true,
       "id": "0bb0315f-a76f-4d09-aded-f28167cd034c",
-      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d",
+      "monitor": true,
       "name": "My Issues",
       "query": "project = \"TOTVS LABS - Carol Assistant\" AND assignee = currentUser() and status not in (Closed, Done, Canceled) and type != Epic",
-      "enabled": true,
-      "monitor": true
+      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d"
     },
     {
+      "enabled": true,
       "id": "1cd78ccb-06ba-4930-87dc-a3ef86802a43",
-      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d",
+      "monitor": true,
       "name": "TODO - This Sprint",
       "query": "project = \"TOTVS LABS - Carol Assistant\" AND Sprint in openSprints() AND status = \"To do\"",
-      "enabled": true,
-      "monitor": true
+      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d"
     },
     {
+      "enabled": true,
       "id": "1e2718fe-1fea-4c9a-9df8-1540b5585cc8",
-      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d",
+      "monitor": true,
       "name": "This Sprint Issue",
       "query": "project = \"TOTVS LABS - Carol Assistant\" AND Sprint in openSprints() and status not in (Closed, Done, Canceled)",
-      "enabled": true,
-      "monitor": true
+      "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d"
     }
   ],
-  "atlascode.jira.explorer.nestSubtasks": false,
+  "atlascode.jira.lastCreateSiteAndProject": {
+    "projectKey": "ALMA",
+    "siteId": "b6694e13-1510-4d7f-8e27-be5daf3bab7d"
+  },
+  "breadcrumbs.enabled": true,
   "codeium.enableConfig": {
     "*": false,
     "ReactNativeToolsOutput": true,
-    "plaintext": true,
-    "makefile": true
+    "makefile": true,
+    "plaintext": true
   },
+  "direnv.path.executable": "",
+  "direnv.status.showChangesCount": false,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorBlinking": "phase",
+  "editor.fontFamily": "'Cascadia Code', 'FiraCode Nerd Font Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": "'calt', 'ss01'",
+  "editor.fontSize": 15,
+  "editor.fontVariations": true,
+  "editor.fontWeight": "normal",
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [
+    120
+  ],
+  "editor.smoothScrolling": true,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Comment",
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.block.documentation",
+          "comment.line",
+          "comment.line.double-slash",
+          "punctuation.definition.comment"
+        ],
+        "settings": {
+          "fontStyle": "italic",
+          "foreground": "#828282"
+        }
+      },
+      {
+        "name": "Functions and Methods",
+        "scope": [
+          "entity.name.function",
+          "entity.name.method",
+          "entity.name.class"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.trimAutoWhitespace": true,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    "*.tmpl": "gotemplate"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "yarn.lock": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
-    "plaintext": true,
     "markdown": false,
-    "scminput": false
+    "plaintext": true,
+    "scminput": false,
+    "yaml": true
   },
-  "git.autofetch": true,
-  "liveshare.presence": true,
-  "vsicons.dontShowNewVersionMessage": true,
-  "terminal.integrated.fontFamily": "'Cascadia Code PL', 'FiraCode Nerd Font Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
-  "direnv.path.executable": "",
-  "go.toolsManagement.autoUpdate": true,
-  "direnv.status.showChangesCount": false,
-  "githubPullRequests.remotes": [
-    "origin",
-    "upstream",
-    "github"
-  ],
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.pushBranch": "always",
   "githubPullRequests.queries": [
     {
       "label": "Waiting For My Review",
@@ -152,8 +133,72 @@
       "query": "is:open author:${user}"
     }
   ],
-  "githubPullRequests.pushBranch": "always",
+  "githubPullRequests.remotes": [
+    "origin",
+    "upstream",
+    "github"
+  ],
+  "go.alternateTools": {
+    "go-langserver": "gopls"
+  },
+  "go.buildFlags": [
+    "-v"
+  ],
+  "go.coverOnSingleTest": true,
+  "go.coverageDecorator": {
+    "type": "gutter"
+  },
+  "go.formatTool": "goimports",
+  "go.languageServerExperimentalFeatures": {
+    "autoComplete": true,
+    "format": true
+  },
+  "go.testTimeout": "3m",
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "jupyter.askForKernelRestart": false,
+  "liveshare.presence": true,
+  "redhat.telemetry.enabled": true,
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true,
+  "search.exclude": {
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "/vendor": true
+  },
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
   "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredSettings": [
+    "-python.venvFolders",
+    "-direnv.path.executable"
+  ],
+  "tabnine.experimentalAutoImports": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.fontFamily": "'Cascadia Code PL', 'FiraCode Nerd Font Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 14,
+  "terraform.languageServer.enable": true,
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "disabled",
+    "vs-kubernetes.ignore-recommendations": true
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.newWindowDimensions": "inherit",
+  "window.restoreWindows": "none",
+  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "workbench.colorTheme": "MacOS Modern Dark - Ventura Xcode",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.showIcons": true,
+  "workbench.fontAliasing": "auto",
+  "workbench.iconTheme": "macos-modern-big-sur-icon-theme",
+  "workbench.productIconTheme": "macos-modern",
+  "workbench.startupEditor": "newUntitledFile",
   "yaml.customTags": [
     "!And",
     "!And sequence",
@@ -183,39 +228,10 @@
     "!Split",
     "!Split sequence"
   ],
-  "jupyter.askForKernelRestart": false,
-  "editor.fontFamily": "'FiraCode Nerd Font Mono', Hack, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontVariations": true,
-  "editor.fontWeight": "normal",
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "name": "Comment",
-        "scope": [
-          "comment",
-          "comment.block",
-          "comment.block.documentation",
-          "comment.line",
-          "comment.line.double-slash",
-          "punctuation.definition.comment",
-        ],
-        "settings": {
-          "fontStyle": "italic",
-          "foreground": "#828282"
-        }
-      },
-      {
-        "name": "Functions and Methods",
-        "scope": [
-          "entity.name.function",
-          "entity.name.method",
-          "entity.name.class",
-        ],
-		"settings": {
-			"fontStyle": "italic",
-		  }
-      }
-    ]
+  "yaml.schemas": {
+    "file:///Users/gzamboni/.vscode/extensions/atlassian.atlascode-3.0.5/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+  },
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
   }
 }
